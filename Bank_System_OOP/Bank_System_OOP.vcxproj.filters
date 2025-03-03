@@ -35,7 +35,7 @@
     <ClInclude Include="clsPerson.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="clsClient.h">
+    <ClInclude Include="clsBankClient.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>

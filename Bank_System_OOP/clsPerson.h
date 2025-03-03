@@ -10,12 +10,12 @@ private:
 	string _Email;
 	string _Phone;
 public:
-	clsPerson(string FirstName,string LastName,string Email,string Phone) {
-		FirstName = _FirstName;
-		LastName = _LastName;
-		Email = _Email;
-		Phone = _Phone;
-	}
+clsPerson(string FirstName, string LastName, string Email, string Phone) {
+    _FirstName = FirstName;
+    _LastName = LastName;
+    _Email = Email;
+    _Phone = Phone;
+}
 
 	void SetFirstName(string FirstName) {
 		FirstName = _FirstName;
@@ -30,7 +30,7 @@ public:
 		LastName = _LastName;
 	}
 	string GetLastName() {
-		return _FirstName;
+		return _LastName;
 	}
 	__declspec(property(get = GetLastName, put = SetLastName)) string LastName;
 	
@@ -43,7 +43,7 @@ public:
 	}
 	__declspec(property(get = GetEmail, put = SetEmail)) string Email;
 
-	void SetFirstName(string Phone) {
+	void SetPhone(string Phone) {
 		Phone = _Phone;
 	}
 	string GetPhone() {

@@ -4,11 +4,13 @@
 #include "clsDate.h"
 #include "clsInputValidate.h"
 #include "clsUtil.h"
-#include "clsClient.h"
+#include "clsBankClient.h"
 #include "clsPerson.h"
 using namespace std;
 int main()
 {
-    
+	clsBankClient Client = clsBankClient::Find("A101");
+	Client.Print();
+	
 }
 
