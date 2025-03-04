@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
+#include "clsUtil.h"
 #include <iomanip>
 
 void ReadClientInfo(clsBankClient& Client)
@@ -28,7 +29,7 @@ void UpdateClient()
 {
     string AccountNumber = "";
 
-    cout << "\nPlease Enter client Account Number: ";
+    cout << "\nPlease Enter clientACCCCC Account Number: ";
     AccountNumber = clsInputValidate::ReadString();
 
     while (!clsBankClient::IsClientExist(AccountNumber))
@@ -193,13 +194,46 @@ void ShowClientsList() {
 
 }
 
+void ShowtotalBalances() {
+    vector <clsBankClient> vClients = clsBankClient::GetClientsList();
+
+    cout << "\n\t\t\t\t\tClient List (" << vClients.size() << ") Client(s).";
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
+
+    cout << "| " << left << setw(15) << "Accout Number";
+    cout << "| " << left << setw(40) << "Client Name";
+    cout << "| " << left << setw(12) << "Balance";
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
+    float TotalBalances = clsBankClient::GetTotaBalances();
+    if (vClients.size() == 0)
+        cout << "\t\t\t\tNo Clients Available In the System!";
+    else
+
+        for (clsBankClient Client : vClients)
+        {
+
+            cout << "| " << setw(15) << left << Client.AccountNumber();
+            cout << "| " << setw(40) << left << Client.FullName();
+            cout << "| " << setw(12) << left << Client.AccountBalance;     
+            cout << endl;
+        }
+
+    cout << "\n_______________________________________________________";
+    cout << "_________________________________________\n" << endl;
+    cout << "\t\t\t\t\t   Total balnces = " << TotalBalances << endl;
+    cout << "\t\t\t\t\t "<< clsUtil::NumberToText(TotalBalances) << endl;
+}
+
 int main()
 
 {
    /* UpdateClient();*/
-   /* AddNewClient();*/
+   /* AddNewClient();*/D
    /* DeleteClient();*/
-    ShowClientsList();
+    //ShowClientsList();
+    ShowtotalBalances();
     system("pause>0");
     return 0;
 }
