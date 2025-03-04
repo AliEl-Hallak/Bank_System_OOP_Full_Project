@@ -98,7 +98,16 @@ public:
 		}
 		return Number;
 	}
-
+	static float ReadFloatNumber(string ErrorMessage = "Invalid Number, Enter again\n")
+	{
+		float Number;
+		while (!(cin >> Number)) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << ErrorMessage;
+		}
+		return Number;
+	}
 	static double ReadDblNumberBetween(double From, double To, string ErrorMessage = "Number is not within range, Enter again:\n")
 	{
 		double Number = ReadDblNumber();
@@ -115,5 +124,10 @@ public:
 		return	clsDate::IsValidDate(Date);
 	}
 
+	static string ReadString() {
+		string S1 = "";
+		getline(cin >> ws, S1);
+		return S1;
+	}
 };
 

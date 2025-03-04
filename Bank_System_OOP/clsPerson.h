@@ -18,7 +18,7 @@ clsPerson(string FirstName, string LastName, string Email, string Phone) {
 }
 
 	void SetFirstName(string FirstName) {
-		FirstName = _FirstName;
+		_FirstName = FirstName;
 	}
 	string GetFirstName() {
 		return _FirstName;
@@ -27,7 +27,7 @@ clsPerson(string FirstName, string LastName, string Email, string Phone) {
 
 
 	void SetLastName(string LastName) {
-		LastName = _LastName;
+		_LastName = LastName ;
 	}
 	string GetLastName() {
 		return _LastName;
@@ -36,7 +36,7 @@ clsPerson(string FirstName, string LastName, string Email, string Phone) {
 	
 
 	void SetEmail(string Email) {
-		Email = _Email;
+		_Email = Email ;
 	}
 	string GetEmail() {
 		return _Email;
@@ -44,7 +44,7 @@ clsPerson(string FirstName, string LastName, string Email, string Phone) {
 	__declspec(property(get = GetEmail, put = SetEmail)) string Email;
 
 	void SetPhone(string Phone) {
-		Phone = _Phone;
+		_Phone = Phone ;
 	}
 	string GetPhone() {
 		return _Phone;
