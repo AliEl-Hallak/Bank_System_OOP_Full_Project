@@ -2,6 +2,8 @@
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
 #include "clsUtil.h"
+#include "clsMainScreen.h"
+#include "clsScreen.h"
 #include <iomanip>
 
 void ReadClientInfo(clsBankClient& Client)
@@ -29,7 +31,7 @@ void UpdateClient()
 {
     string AccountNumber = "";
 
-    cout << "\nPlease Enter clientACCCCC Account Number: ";
+    cout << "\nPlease Enter client Account Number: ";
     AccountNumber = clsInputValidate::ReadString();
 
     while (!clsBankClient::IsClientExist(AccountNumber))
@@ -229,11 +231,13 @@ void ShowtotalBalances() {
 int main()
 
 {
-   /* UpdateClient();*/
-   /* AddNewClient();*/D
+ /*   ShowtotalBalances();
+   UpdateClient();*/
+   /* AddNewClient();*/
    /* DeleteClient();*/
     //ShowClientsList();
-    ShowtotalBalances();
+    clsMainScreen::ShowMainMenue();
+    
     system("pause>0");
     return 0;
 }
