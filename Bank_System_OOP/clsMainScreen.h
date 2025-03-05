@@ -2,8 +2,10 @@
 using namespace std;
 #include <iostream>
 #include "clsScreen.h"
+#include "clsClientListScreen.h"
+#include "clsAddNewClientScreen.h"
 #include <iomanip>
-class clsMainScreen :public clsScreen
+class clsMainScreen :protected clsScreen
 {
 private:
     enum enMainMenueOptions {
@@ -21,58 +23,48 @@ private:
     static  void _GoBackToMainMenue()
     {
         cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menue...\n";
-
         system("pause>0");
         ShowMainMenue();
     }
 
     static void _ShowAllClientsScreen()
     {
-        cout << "\nClient List Screen Will be here...\n";
-
-
+        clsClientListScreen::ShowClientsList();
     }
 
     static void _ShowAddNewClientsScreen()
     {
-        cout << "\nAdd New Client Screen Will be here...\n";
-
+        clsAddNewClientScreen::ShowAddNewClientScreen();
     }
 
     static void _ShowDeleteClientScreen()
     {
         cout << "\nDelete Client Screen Will be here...\n";
-
     }
 
     static void _ShowUpdateClientScreen()
     {
         cout << "\nUpdate Client Screen Will be here...\n";
-
     }
 
     static void _ShowFindClientScreen()
     {
         cout << "\nFind Client Screen Will be here...\n";
-
     }
 
     static void _ShowTransactionsMenue()
     {
         cout << "\nTransactions Menue Will be here...\n";
-
     }
 
     static void _ShowManageUsersMenue()
     {
         cout << "\nUsers Menue Will be here...\n";
-
     }
 
     static void _ShowEndScreen()
     {
         cout << "\nEnd Screen Will be here...\n";
-
     }
 
 
