@@ -161,19 +161,19 @@ public:
 
             switch (SaveResult)
             {
-            case  clsUser::enSaveResults::svSucceeded:
-            {
-                cout << "\nUser Updated Successfully :-)\n";
+                case  clsUser::enSaveResults::svSucceeded:
+                {
+                    cout << "\nUser Updated Successfully :-)\n";
 
-                _PrintUser(User1);
-                break;
-            }
-            case clsUser::enSaveResults::svFaildEmptyObject:
-            {
-                cout << "\nError User was not saved because it's Empty";
-                break;
+                    _PrintUser(User1);
+                    break;
+                }
+                case clsUser::enSaveResults::svFaildEmptyObject:
+                {
+                    cout << "\nError User was not saved because it's Empty";
+                    break;
 
-            }
+                }
 
             }
 

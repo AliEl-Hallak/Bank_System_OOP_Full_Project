@@ -347,5 +347,18 @@ public:
         pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64
     };
 
+    bool CheckAccessPermission(enPermissions Permission)
+    {
+        if (this->Permissions == enPermissions::eAll)
+            return true;
+
+        if ((Permission & this->Permissions) == Permission)
+            return true;
+        else
+            return false;
+
+    }
+
+
 };
 
