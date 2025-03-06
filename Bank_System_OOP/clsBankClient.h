@@ -287,13 +287,33 @@ public:
         return _LoadClientsDataFromFile();
     }
 
-    static float GetTotaBalances() {
+    static float GetTotalBalances() {
         vector <clsBankClient> vClient = _LoadClientsDataFromFile();
         float TotalBalances = 0;
         for (clsBankClient C : vClient) {
             TotalBalances += C.AccountBalance;
         }
         return TotalBalances;
+    }
+
+    void Deposit(double Amount) {
+
+        _AccountBalance += Amount;
+        Save();
+    }
+
+    bool Withdraw(double Amount)
+    {
+        if (Amount > _AccountBalance)
+        {
+            return false;
+        }
+       
+        _AccountBalance -= Amount;
+        Save();
+        return true;
+        
+
     }
 };
 
