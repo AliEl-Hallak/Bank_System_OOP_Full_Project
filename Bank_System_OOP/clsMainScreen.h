@@ -8,6 +8,7 @@ using namespace std;
 #include "clsUpdateClientScreen.h"
 #include "clsFindClientScreen.h"
 #include "clsTransactionsScreen.h"
+#include "clsManageUsersScreen.h"
 #include <iomanip>
 class clsMainScreen :protected clsScreen
 {
@@ -63,7 +64,7 @@ private:
 
     static void _ShowManageUsersMenue()
     {
-        cout << "\nUsers Menue Will be here...\n";
+        clsManageUsersScreen::ShowManageUsersMenue();
     }
 
     static void _ShowEndScreen()
@@ -116,6 +117,7 @@ private:
         case enMainMenueOptions::eManageUsers:
             system("cls");
             _ShowManageUsersMenue();
+            _GoBackToMainMenue();
             break;
 
         case enMainMenueOptions::eExit:
