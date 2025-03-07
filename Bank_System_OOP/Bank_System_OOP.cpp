@@ -5,12 +5,12 @@
 int main()
 
 {
-    do
-    {
-        clsLoginScreen::ShowLoginScreen();
+    while (clsLoginScreen::ShowLoginScreen()) {
 
-    } while (true);
+        clsMainScreen::ShowMainMenue();
 
-    system("pause>0");
+    }
+
+    system("pause>0");  
     return 0;
 }

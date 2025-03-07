@@ -2,4 +2,4 @@
 #include <iostream>
 #include "clsUser.h"
 clsUser CurrentUser = clsUser::Find("", "");
-
+ short CountLoginTry = 3;
