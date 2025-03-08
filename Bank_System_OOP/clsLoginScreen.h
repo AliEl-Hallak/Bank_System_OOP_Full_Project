@@ -47,7 +47,7 @@ private:
          
 
         } while (LoginFaild );
-
+        CurrentUser.RegisterLogIN();
         return true;
        
 
